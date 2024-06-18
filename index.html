@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParadShop</title>
+    <link rel="icon" href="ima/ParedShop.jpg" type="image/jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #fff;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            margin: 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #f1f1f1;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        .producto, .dueno {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .producto img, .dueno img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #descripcion-tienda {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a ParadShop</h1>
+        <nav>
+            <button id="ver-productos">Ver Productos</button>
+            <button id="ver-duenos">Ver Dueños</button>
+            <button id="ver-vendedores">Ver Vendedores</button>
+        </nav>
+    </header>
+    <main>
+        <section id="descripcion-tienda">
+            <p>
+                Bienvenido a ParadShop: Tu Tienda de Menús para FiveM de Confianza. En ParadShop, nos especializamos en ofrecer menús de alta calidad para FiveM, diseñados para llevar tu experiencia de juego al siguiente nivel. FiveM es una plataforma de modificación de Grand Theft Auto V (GTA V) que permite a los jugadores disfrutar de servidores personalizados y modos de juego únicos. Nuestros menús están meticulosamente desarrollados para proporcionar funcionalidades avanzadas, facilidad de uso y una experiencia de usuario sin igual.
+            </p>
+            <p>
+                <strong>¿Por Qué Elegir ParadShop?</strong>
+                <br>
+                Calidad y Confianza: En ParadShop, nos comprometemos a proporcionar productos de alta calidad que superen tus expectativas. Cada menú que ofrecemos ha sido probado exhaustivamente para garantizar su rendimiento y fiabilidad.
+                <br>
+                Atención al Cliente: Nuestro equipo de soporte está disponible las 24 horas del día, los 7 días de la semana, para ayudarte con cualquier pregunta o problema. Nos enorgullece ofrecer un servicio al cliente excepcional y estamos dedicados a asegurarnos de que tengas la mejor experiencia posible.
+                <br>
+                Precios Competitivos: Ofrecemos una variedad de opciones de precios para adaptarnos a tus necesidades y presupuesto. Desde planes semanales hasta licencias de por vida, tenemos una opción para cada jugador.
+                <br>
+                Métodos de Pago: Aceptamos una variedad de métodos de pago para tu conveniencia:
+                <ul>
+                    <li>PayPal: Paga de manera segura y rápida a través de PayPal.</li>
+                    <li>CashApp: Utiliza CashApp para una transacción fácil y sencilla.</li>
+                </ul>
+                Explora nuestros productos y encuentra el menú perfecto para ti. En ParadShop, estamos aquí para mejorar tu experiencia de juego y asegurarnos de que disfrutes cada momento. ¡Gracias por elegir ParadShop! Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros. ¡Nos vemos en el juego!
+            </p>
+        </section>
+        <section id="productos">
+            <h2>Productos</h2>
+            <div class="producto" data-id="producto1">
+                <img src="ima/redengine.gif" alt="Producto 1">
+                <h3>RedEngine</h3>
+                <p>Menú Para Fivem.</p>
+            </div>
+            <div class="producto" data-id="producto2">
+                <img src="ima/nexus.png" alt="Producto 2">
+                <h3>Nexus</h3>
+                <p>Menú Para Fivem.</p>
+            </div>
+            <div class="producto" data-id="producto3">
+                <img src="ima/images.jfif" alt="Producto 3">
+                <h3>Skript.gg</h3>
+                <p>Menú Para Fivem.</p>
+            </div>
+            <div class="producto" data-id="producto4">
+                <img src="ima/eulen.jpg" alt="Producto 4">
+                <h3>Eulen cheats</h3>
+                <p>Menú Para Fivem.</p>
+            </div>
+        </section>
+        <section id="duenos" style="display: none;">
+            <h2>Dueños</h2>
+            <div class="dueno">
+                <h3>ParedDev</h3>
+                <p>Permisos: Todos los permisos de venta</p>
+                <img src="ruta/a/logo/discord.png" alt="Logo Discord ParedDev">
+            </div>
+        </section>
+        <section id="vendedores" style="display: none;">
+            <h2>Vendedores</h2>
+            <!-- Aquí se llenarán dinámicamente los vendedores -->
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ParedDev</p>
+    </footer>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- El contenido del producto se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Start of Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/DEFAULT';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
+</body>
+</html>
